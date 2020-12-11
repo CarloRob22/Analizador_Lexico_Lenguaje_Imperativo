@@ -21,3 +21,4 @@
 <signos comparativos> '=' |'<' | '<=' |'=>' |'>' |'!=' | 
 <condicion>::- <variabla><signos comparativos><variable> | <variabla><signos comparativos><entero> | <variabla><signos comparativos><palabra>
 <funcion While> ::- 'mientras' <condicion> 'begin' <instrucciones> 'end'
+
