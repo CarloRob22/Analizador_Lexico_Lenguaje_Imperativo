@@ -1,0 +1,24 @@
+<programa>::- <encabezado de programa>
+<digito>::- 1|2|3|4|5|6|7|8|9 
+<entero>::- <digito>|<entero><digito> 
+
+<letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z 
+<palabra> ::- <letra>|<letra><palabra> 
+<Palabras recerbadas para ciclos> ::- "mientras"|"para"
+
+<Palabras recerbadas para led> ::- "Intencidad"|"Temporizador"
+<led> ::- 'led' '(' <entero> ')'
+<boleano> ::- 1|0 
+
+<funcion enceder o apagar>::- 'led'  '('  <entero>  '='  <boleano>
+<funcion intensidad> ::- 'led'  '(' <entero>  'intencidad>' '='  <digito>  ')'
+<funcion temporizador> ::- 'led'  '(' <entero>  'temporizador,  '='  <enter>  ')' 
+
+<tipo> ::- 'bool′|′int′|'string'
+<variable>::- <palabra>
+<declarar variable> ::- <tipo> <varable> | <tipo> <varable> '=' <entero> | <tipo> <varable> '=' <palabra> | <tipo> <varable> '=' <boleano>
+
+<signos comparativos> '=' |'<' | '<=' |'=>' |'>' |'!=' | 
+<condicion>::- <variabla><signos comparativos><variable> | <variabla><signos comparativos><entero> | <variabla><signos comparativos><palabra>
+<funcion While> ::- 'mientras' <condicion> 'begin' <instrucciones> 'end'
+
