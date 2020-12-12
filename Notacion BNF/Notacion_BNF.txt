@@ -1,11 +1,14 @@
-<programa>::- <encabezado de programa>
+<simbolos_basicos>::-<letra>|<digito>|<valor_booleano>|<delimitador>
 <digito>::- 1|2|3|4|5|6|7|8|9 
-<entero>::- <digito>|<entero><digito> 
-
-<letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z 
+<letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
 <palabra> ::- <letra>|<letra><palabra> 
-<Palabras recerbadas para ciclos> ::- "mientras"|"para"
+<valor_booleano>::- #TRUE#|#False#
+<delimitador>::-<operador>|<separador>|<bracket>|<declarador>|<especificador>|
 
+
+
+<Palabras recerbadas para ciclos>::-"mientras"|"para"
+<entero>::- <digito>|<entero><digito>
 <Palabras recerbadas para led> ::- "Intencidad"|"Temporizador"
 <led> ::- 'led' '(' <entero> ')'
 <boleano> ::- 1|0 
