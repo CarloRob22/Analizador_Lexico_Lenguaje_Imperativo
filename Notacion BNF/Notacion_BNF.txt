@@ -1,27 +1,24 @@
-<simbolos_basicos>::-<letra>|<digito>|<valor_booleano>|<delimitador>
-<digito>::- 1|2|3|4|5|6|7|8|9 
-<letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
-<palabra> ::- <letra>|<letra><palabra> 
-<valor_booleano>::- #TRUE#|#False#
-<delimitador>::-<operador>|<separador>|<bracket>|<declarador>|<especificador>|
-
-
-
-<Palabras recerbadas para ciclos>::-"mientras"|"para"
+<programa>::-<encabezado_programa>';'
+    <bloque_programa>
+<encabezado_programa>::-'program'<identificador_programa>
+<identificador_programa> ::= <letra>|<identificador_programa><letra>|<identificador_programa><digito> 
+<bloque_programa>::-'begin' (<definicion_led><declaracion_funcion>|<definicion_led><declaracion_funcion><bloque>) 'end'
+<definicion_led> ::- 'led' <identificador_led>
+<identificador_variable> ::= <letra><digito>|<identificador_digito><letra><digito>
+<definicion_variable>::- 'var'<identificador_variable>'/'<tipo_variable>  
+<identificador_led> ::= <letra><digito>|<identificador_digito><letra><digito>
+<declarar_funcion>::-<funcion_enceder_o_apagar>|<funcion_intensidad>|<funcion_temporizador>|<funcion_While>
+<funcion_enceder_o_apagar>::- 'led' '('<entero> '=' <boleano>')'
+<funcion_intensidad> ::- <definicion_led> '.' 'intensity' '=' <entero>'
+<funcion_temporizador> ::- <definicion_led> '.' 'timer' '=' <entero>'
+<digito>::- 0|1|2|3|4|5|6|7|8|9
+<tipo_variable> ::- <boleano>|<entero>|<cadena>
+<boleano> ::- 'TRUE'|'FALSE'
 <entero>::- <digito>|<entero><digito>
-<Palabras recerbadas para led> ::- "Intencidad"|"Temporizador"
-<led> ::- 'led' '(' <entero> ')'
-<boleano> ::- 1|0 
+<cadena>::- <letra>|<letra><cadena> 
+<letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
+<palabras_reservadas>::- 'program'|'begin'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'
 
-<funcion enceder o apagar>::- 'led'  '('  <entero>  '='  <boleano>
-<funcion intensidad> ::- 'led'  '(' <entero>  'intencidad>' '='  <digito>  ')'
-<funcion temporizador> ::- 'led'  '(' <entero>  'temporizador,  '='  <enter>  ')' 
 
-<tipo> ::- 'bool′|′int′|'string'
-<variable>::- <palabra>
-<declarar variable> ::- <tipo> <varable> | <tipo> <varable> '=' <entero> | <tipo> <varable> '=' <palabra> | <tipo> <varable> '=' <boleano>
 
-<signos comparativos> '=' |'<' | '<=' |'=>' |'>' |'!=' | 
-<condicion>::- <variabla><signos comparativos><variable> | <variabla><signos comparativos><entero> | <variabla><signos comparativos><palabra>
-<funcion While> ::- 'mientras' <condicion> 'begin' <instrucciones> 'end'
 
