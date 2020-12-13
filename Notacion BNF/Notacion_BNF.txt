@@ -13,25 +13,33 @@
 <declaracion_for>::-'for'('<declaracion_variable>';'<expresion_booleana>';'<operacion_aritmetica>')''{'<declaracion>'}'';'
 <expresion_booleana>::-<declaracion_simple><comparador_logico><declaracion_simple>
 <comparador_logico>::- ==|<|>|¡=|<=|>=
-<operacion_aritmetica>::- 
+<operacion_aritmetica>::- <operacion_suma>|<operacion_multiplicacion>
+<operacion_suma>::-<identificador_variable><operador_suma><identidicador_variable>|<operacion_suma><operador_suma><identidicador_variable>';'
+<operacion_multiplicacion>::-<identidicador_variable><operador_multiplicacion><identidicador_variable>|<operacion_multiplicacion><operador_multiplicacion><identidicador_variable>';'
+<operador_suma>::- +|-
+<operador_multiplicacion>::- *|/
 <declaracion_vacia>::-'pass'';'
 <declaracion_led> ::- 'led' <identificador_led>
-<declaracion_variable>::- 'var'(<identificador_variable>':'<tipo_dato>)';'  //var nombre : integer
+<declaracion_variable>::- 'var'(<identificador_variable>':'<tipo_dato>)';'  //var edad int : 22  //var casado boolean : FALSE  //var nombre string : Roberto
 <identificador_variable> ::= <letra><digito>|<palabra><digito>
 <identificador_led> ::= <letra><digito>|<palabra><digito>
 <declaracion_procedimiento>::-<funcion_enceder_apagar>|<funcion_intensidad>|<funcion_temporizador>
 <funcion_enceder_apagar>::- <identificador_led>'.'onOff''=' <boleano>';'       //led1.onOff=TRUE
 <funcion_intensidad> ::- <declaracion_led> '.' 'intensity' '=' <intensidad_lumenes>' ';'   //led1.intensity=1-10
 <funcion_temporizador> ::- <declaracion_led> '.' 'timer' '=' <entero>' ';'     //led1.timer=12
-<tipo_dato> ::- '<boleano>'|'<entero>'|'<cadena>'
+<tipo_dato> ::- <declaracion_boleano>|<declaracion_entero>|<declaracion_cadena>
+<declaracion_boleano>::- 'boolean'<boleano>
 <boleano> ::- 'TRUE'|'FALSE'
+<declaracion_boleano>::- 'boolean'':'<boleano>
 <intensidad_lumenes>::- 1|2|3|4|5|6|7|8|9|10
-<entero>::- <digito>|<entero><digito>
+<declaracion_entero>::- 'int'<entero>
+<entero>::- <digito>|<entero>':'<digito>
+<declaracion_cadena>::-'string'':'<cadena>
 <cadena>::- <letra>|<letra><cadena>
 <palabra>::-<letra>|<palabra><letra>
 <letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
 <digito>::- 0|1|2|3|4|5|6|7|8|9
-<palabras_reservadas>::- 'program'|'begin'|'end'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'|'pass'|'if'|'end if'|'else'|'for'
+<palabras_reservadas>::- 'program'|'begin'|'end'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'|'pass'|'if'|'end if'|'else'|'for'|'int'|'boolean'|'string'
 
 
 
