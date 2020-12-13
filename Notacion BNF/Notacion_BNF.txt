@@ -2,22 +2,29 @@
     <bloque_programa>
 <encabezado_programa>::-'program'<identificador_programa>
 <identificador_programa> ::= <letra>|<identificador_programa><letra>|<identificador_programa><digito> 
-<bloque_programa>::-'begin' (<definicion_led><declaracion_funcion>|<definicion_led><declaracion_funcion><bloque>) 'end'
-<definicion_led> ::- 'led' <identificador_led>
-<identificador_variable> ::= <letra><digito>|<identificador_digito><letra><digito>
-<definicion_variable>::- 'var'<identificador_variable>'/'<tipo_variable>  
-<identificador_led> ::= <letra><digito>|<identificador_digito><letra><digito>
-<declarar_funcion>::-<funcion_enceder_o_apagar>|<funcion_intensidad>|<funcion_temporizador>|<funcion_While>
-<funcion_enceder_o_apagar>::- 'led' '('<entero> '=' <boleano>')'
-<funcion_intensidad> ::- <definicion_led> '.' 'intensity' '=' <entero>'
-<funcion_temporizador> ::- <definicion_led> '.' 'timer' '=' <entero>'
-<digito>::- 0|1|2|3|4|5|6|7|8|9
+<bloque_programa>::-'begin'<declaracion>'end'
+<declaracion>::-(<declaracion_simple>|<declaracion_compuesta>)
+<declaracion_simple>::-<declaracion_vacia>|<declaracion_led>|<declaracion_variable>|<declaracion_procedimiento>
+<declaracion_compuesta>::-<declaracion_compuesta>|<declaracion_condicional>|<declaracion_repetitiva>
+<declaracion_compuesta
+<declaracion_vacia>::-'pass'';'
+<declaracion_led> ::- 'led' <identificador_led>
+<declaracion_variable>::- 'var'(<identificador_variable>'/'<tipo_variable>)';'  
+<identificador_variable> ::= <letra><digito>|<palabra><digito>
+<identificador_led> ::= <letra><digito>|<palabra><digito>
+<declaracion_procedimiento>::-<funcion_enceder_apagar>|<funcion_intensidad>|<funcion_temporizador>
+<funcion_enceder_apagar>::- <identificador_led>'.'onOff''=' <boleano>';'       //led1.onOff=TRUE
+<funcion_intensidad> ::- <declaracion_led> '.' 'intensity' '=' <intensidad_lumenes>' ';'   //led1.intensity=1-10
+<funcion_temporizador> ::- <declaracion_led> '.' 'timer' '=' <entero>' ';'     //led1.timer=12
 <tipo_variable> ::- <boleano>|<entero>|<cadena>
 <boleano> ::- 'TRUE'|'FALSE'
+<intensidad_lumenes>::- 1|2|3|4|5|6|7|8|9|10
 <entero>::- <digito>|<entero><digito>
-<cadena>::- <letra>|<letra><cadena> 
+<cadena>::- <letra>|<letra><cadena>
+<palabra>::-<letra>|<palabra><letra>
 <letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
-<palabras_reservadas>::- 'program'|'begin'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'
+<digito>::- 0|1|2|3|4|5|6|7|8|9
+<palabras_reservadas>::- 'program'|'begin'|'end'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'|'pass'
 
 
 
