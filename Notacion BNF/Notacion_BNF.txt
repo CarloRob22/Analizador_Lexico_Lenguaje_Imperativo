@@ -20,7 +20,7 @@
 <operador_multiplicacion>::- *|/
 <declaracion_vacia>::-'pass'';'
 <declaracion_led> ::- 'led' <identificador_led>
-<declaracion_variable>::- 'var'(<identificador_variable>':'<tipo_dato>)';'  //var edad int : 22  //var casado boolean : FALSE  //var nombre string : Roberto
+<declaracion_variable>::- 'var'(<identificador_variable><tipo_dato>)';'  //var edad int : 22  //var casado boolean : FALSE  //var nombre string : Roberto
 <identificador_variable> ::= <letra><digito>|<palabra><digito>
 <identificador_led> ::= <letra><digito>|<palabra><digito>
 <declaracion_procedimiento>::-<funcion_enceder_apagar>|<funcion_intensidad>|<funcion_temporizador>
@@ -28,9 +28,8 @@
 <funcion_intensidad> ::- <declaracion_led> '.' 'intensity' '=' <intensidad_lumenes>' ';'   //led1.intensity=1-10
 <funcion_temporizador> ::- <declaracion_led> '.' 'timer' '=' <entero>' ';'     //led1.timer=12
 <tipo_dato> ::- <declaracion_boleano>|<declaracion_entero>|<declaracion_cadena>
-<declaracion_boleano>::- 'boolean'<boleano>
-<boleano> ::- 'TRUE'|'FALSE'
 <declaracion_boleano>::- 'boolean'':'<boleano>
+<boleano> ::- 'TRUE'|'FALSE'
 <intensidad_lumenes>::- 1|2|3|4|5|6|7|8|9|10
 <declaracion_entero>::- 'int'<entero>
 <entero>::- <digito>|<entero>':'<digito>
