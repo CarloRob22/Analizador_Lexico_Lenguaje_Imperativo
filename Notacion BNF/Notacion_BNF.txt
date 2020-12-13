@@ -3,20 +3,27 @@
 <encabezado_programa>::-'program'<identificador_programa>
 <identificador_programa> ::= <letra>|<identificador_programa><letra>|<identificador_programa><digito> 
 <bloque_programa>::-'begin'<declaracion>'end'
-<declaracion>::-(<declaracion_simple>|<declaracion_compuesta>)
+<declaracion>::-(<declaracion_simple>|<declaracion_estructurada>)
 <declaracion_simple>::-<declaracion_vacia>|<declaracion_led>|<declaracion_variable>|<declaracion_procedimiento>
-<declaracion_compuesta>::-<declaracion_compuesta>|<declaracion_condicional>|<declaracion_repetitiva>
-<declaracion_compuesta
+<declaracion_estructurada>::-<declaracion_condicional>|<declaracion_repetitiva>|<declaracion_condicional><declaracion_repetitiva>|<declaracion_repetitiva><declaracion_condicional>
+<declaracion_condicional>::-<declaracion_if>
+<declaracion_if>::-'if' '('<expresion_booleana>')' then '{'<declaracion>'}'[<declaracion_else>]''end if'';'
+<declaracion_else>::-'else' '{'<declaracion>'}'
+<declaracion_repetitiva>::-<declaracion_for>
+<declaracion_for>::-'for'('<declaracion_variable>';'<expresion_booleana>';'<operacion_aritmetica>')''{'<declaracion>'}'';'
+<expresion_booleana>::-<declaracion_simple><comparador_logico><declaracion_simple>
+<comparador_logico>::- ==|<|>|¡=|<=|>=
+<operacion_aritmetica>::- 
 <declaracion_vacia>::-'pass'';'
 <declaracion_led> ::- 'led' <identificador_led>
-<declaracion_variable>::- 'var'(<identificador_variable>'/'<tipo_variable>)';'  
+<declaracion_variable>::- 'var'(<identificador_variable>':'<tipo_dato>)';'  //var nombre : integer
 <identificador_variable> ::= <letra><digito>|<palabra><digito>
 <identificador_led> ::= <letra><digito>|<palabra><digito>
 <declaracion_procedimiento>::-<funcion_enceder_apagar>|<funcion_intensidad>|<funcion_temporizador>
 <funcion_enceder_apagar>::- <identificador_led>'.'onOff''=' <boleano>';'       //led1.onOff=TRUE
 <funcion_intensidad> ::- <declaracion_led> '.' 'intensity' '=' <intensidad_lumenes>' ';'   //led1.intensity=1-10
 <funcion_temporizador> ::- <declaracion_led> '.' 'timer' '=' <entero>' ';'     //led1.timer=12
-<tipo_variable> ::- <boleano>|<entero>|<cadena>
+<tipo_dato> ::- '<boleano>'|'<entero>'|'<cadena>'
 <boleano> ::- 'TRUE'|'FALSE'
 <intensidad_lumenes>::- 1|2|3|4|5|6|7|8|9|10
 <entero>::- <digito>|<entero><digito>
@@ -24,7 +31,7 @@
 <palabra>::-<letra>|<palabra><letra>
 <letra> ::- a|b|c|d|e|f|g|h|i|g|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z  
 <digito>::- 0|1|2|3|4|5|6|7|8|9
-<palabras_reservadas>::- 'program'|'begin'|'end'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'|'pass'
+<palabras_reservadas>::- 'program'|'begin'|'end'|'led'|'var'|'intensity'|'timer'|'TRUE'|'FALSE'|'pass'|'if'|'end if'|'else'|'for'
 
 
 
