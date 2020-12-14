@@ -1,0 +1,55 @@
+//Primero el usuario debe ingresar los coeficientes en el archivo de entrada
+//para posteriormente ejecutar el programa.
+ 
+#include<stdio.h>//Biblioteca principale
+#include<stdlib.h>//Biblioteca principale
+#include<math.h>//Biblioteca para operaciones matematicas
+ 
+int main()
+{
+  char linea[5];//Vector en donde guardaremos los datos de entrada
+  float a, b, c, x1, x2, deter;// Declaracion de variables
+  int condi=1;
+ 
+  FILE *archivo; //Fichero para abrir leer el archivo
+  FILE *resul;
+  archivo = fopen("general.txt", "r");//Codigo para abrir el archivo para lectura y escritura
+  resul = fopen("resultado.txt", "w");
+ 
+  while (condi !=0){
+   fscanf(archivo, " %s", linea);//Se lee el T.cuadratico del archivo
+   a=atoi(linea);//Se transforma de caracter a numero
+ 
+   fscanf(archivo, "%s", linea);//Se lee el T.lineal del archivo
+   b=atoi(linea);//Se transforma de caracter a numero
+ 
+   fscanf(archivo, "%s", linea);//Se lee el T. independiente del archivo
+   c=atoi(linea);//Se transforma de caracter a numero
+ 
+  printf("\n Los datos leidos del archivo son: ");
+  printf("\n %f", a); //Se imprime los datos en pantalla
+  printf("\n %f", b); //Se imprime los datos en pantalla
+  printf("\n %f", c);//Se imprimelos datos en pantalla
+ 
+  deter=(pow(b,2)-(4*a*c));//Determinante para conocer los distintos casos
+ 
+     if(deter==0)//Primer caso
+      {x1= -b/(2*a);
+        fprintf(resul, "\n\n Solo hay una solucion: %f",x1);}
+        else if(deter<0)//Segundo caso
+              {fprintf(resul,"\n\n No existen soluciones reales, solo imaginarias");}
+               else //Tercer caso
+               {x1=(-b+sqrt(deter))/(2*a);
+                x2=(-b-sqrt(deter))/(2*a);
+               fprintf(resul,"\n\n Las soluciones para dicha ecuacion son: %f y %f",x1,x2);}
+ 
+  printf("\n\nQuieres buscar la solucion de otra ecuacion?\nFinalizar: 0 \nContinuar: 1 ");
+  scanf("%d", &condi);
+ 
+  //getch();
+  system("cls");
+  fclose(archivo);//Se cierra el archivo
+  fclose(resul);
+  return 0;
+}
+}
