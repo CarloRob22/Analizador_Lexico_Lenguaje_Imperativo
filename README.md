@@ -12,4 +12,4 @@ Fredy Alexander Madrid Madrid [20142102033] - *Rama_Fredy_Madrid* - Analizador L
 
 
 NOTA*
--Diagramas De Autómatas Finitos: Fueron realizados en en "JFLAP" un programa que permite realizar diagramas de autómatas y comprobar su correcto funcionamiento, ejecutando el autómata creado. *SÍ SE DESEA VISUALIZAR/EJECUTAR EL DIAGRAMA DEL AFD,SE NECESITA DESCARGAR EL PROGRAMA PORTABLE  "JFLAP" :PESO(7MB) * el cual esta cargado en este repositorio adjunto en  la sección "automatas finitos deterministas".
+-Diagramas De Autómatas Finitos: Fueron realizados en en "JFLAP" un programa que permite realizar diagramas de autómatas y comprobar su correcto funcionamiento, ejecutando el autómata creado. *SÍ SE DESEA VISUALIZAR/EJECUTAR EL DIAGRAMA DEL AFD,SE NECESITA DESCARGAR EL PROGRAMA PORTABLE  "JFLAP" :PESO(7MB) * el cual está cargado en este repositorio adjunto en la sección "automatas finitos deterministas".
