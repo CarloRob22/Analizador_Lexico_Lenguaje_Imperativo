@@ -1,0 +1,26 @@
+miprograma
+begin
+
+led a1;
+led palabra1;
+
+var datoqueso1 int = 2;
+var datoqueso2 int = 3;
+var datoqueso3 int = 1;
+
+datoqueso2-datoqueso3
+
+if(datoqueso1 == datoqueso2)then
+{
+  palabra1.intensity=3;
+  palabra1.onoff=true;
+  palabra1.timer=12;  
+}
+else
+{
+  a1.intensity=3;
+  a1.onoff=false;
+  a1.timer=12;
+}
+
+end
