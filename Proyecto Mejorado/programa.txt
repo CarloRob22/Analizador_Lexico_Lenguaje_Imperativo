@@ -1,0 +1,20 @@
+Program miprograma // primer paso program
+
+Programa de intento 2; //segundo paso palabra mas numero mas ";" para cerrar secuencia 
+
+begin // paso 5 segun automata
+
+led a22. //paso 6,7,8 segun automata
+
+onOff // paso 9 
+
+= // paso 10
+
+true; //paso 11 y 12 decidir si es TRUE OR FALSE mas ";"
+
+end // paso final mas cierre de programa
+
+
+
+
+//Ejemplo de la autonoma, secuencia program/end;

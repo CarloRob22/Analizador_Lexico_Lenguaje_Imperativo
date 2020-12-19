@@ -1,0 +1,18 @@
+Identificadores :39
+Identificador No Valido :24
+Palabras Reservadas program : 1
+Palabras Reservadas begin : 1
+Palabras Reservadas led : 1
+Palabras Reservadas var : 0
+Palabras Reservadas if : 0
+Palabras Reservadas else : 0
+Palabras Reservadas end : 1
+Palabras Reservadas int : 0
+Palabras Reservadas intensity : 0
+Palabras Reservadas timer : 0
+Palabras Reservadas TRUE : 0
+Palabras Reservadas FALSE : 0
+Palabras Reservadas pass : 0
+Palabras Reservadas End_if : 0
+Palabras Reservadas Boolean : 0
+Palabras Reservadas string : 0
